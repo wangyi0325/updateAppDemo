@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">updateAppDemo</string>
+    <string name="permission_dialog_tips">开启应用需要以下权限,不然无法正常运行:\n  1.获取位置信息；\n  2.SD卡存储；\n  3.相机权限;</string>
+</resources>

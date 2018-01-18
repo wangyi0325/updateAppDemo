@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_height="match_parent">-->
+<!--<TextView-->
+    <!--android:id="@+id/noti_tv"-->
+    <!--android:textColor="#00ff00"-->
+    <!--android:text="河长通下载中...."-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="3dp">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:src="@drawable/loc"/>
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignRight="@id/imageView"
+        android:gravity="center"
+        android:text="0%"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/fileName"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_alignBottom="@id/imageView"
+        android:gravity="center_vertical"
+        android:textColor="#0033ff"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fileName"
+        android:layout_alignLeft="@id/fileName"
+        android:max="100"
+        android:progress="0"/>
+</RelativeLayout>
