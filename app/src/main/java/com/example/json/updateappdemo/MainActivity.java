@@ -58,6 +58,16 @@ public class MainActivity extends Activity  {
         textView.setTextColor(Color.WHITE);
         textView.setGravity(Gravity.CENTER);
 
+        checkUpdate();
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(
+                    getPackageName(), 0);
+            nowVersion = packageInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -69,16 +79,6 @@ public class MainActivity extends Activity  {
             if (permission != PackageManager.PERMISSION_GRANTED) {
                 // 没有写的权限，去申请写的权限，会弹出对话框
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE,REQUEST_EXTERNAL_STORAGE);
-            }else {
-                checkUpdate();
-                try {
-                    PackageInfo packageInfo = getPackageManager().getPackageInfo(
-                            getPackageName(), 0);
-                    nowVersion = packageInfo.versionName;
-                } catch (PackageManager.NameNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
